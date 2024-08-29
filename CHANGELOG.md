@@ -1,5 +1,12 @@
 # changeset
 
+## 1.2.11
+
+### Patch Changes
+
+- 4972d51: aaaa
+- ff9775b: asdfasdfasdfasdfasdfasdfasdfadsf555555
+
 ## 1.2.8
 
 ### Patch Changes
