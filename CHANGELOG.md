@@ -1,5 +1,12 @@
 # changeset
 
+## 1.2.6
+
+### Patch Changes
+
+- 676dcec: adfadf asdfadsf asdfasdfasdf
+- d169167: asdtasdasdfasdfasdfasdfas
+
 ## 1.2.2
 
 ### Patch Changes
