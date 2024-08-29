@@ -1,22 +1,10 @@
 {
   "name": "changeset",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "poc changeset",
   "license": "UNLICENSED",
   "private": false,
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "scripts": {
-    "release": "changeset publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/poc-gh-actions/changeset.git",
-    "directory": "packages/changeset"
-  },
   "dependencies": {
-    "@changesets/cli": "^2.27.7",
-    "generate-gitignore": "^0.2.6"
+    "@changesets/cli": "^2.27.7"
   }
 }
