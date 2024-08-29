@@ -1,11 +1,14 @@
 {
   "name": "changeset",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "poc changeset",
   "license": "UNLICENSED",
   "private": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "release": "changeset release"
   },
   "repository": {
     "type": "git",
