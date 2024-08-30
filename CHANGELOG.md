@@ -1,5 +1,11 @@
 # changeset
 
+## 1.1.0
+
+### Minor Changes
+
+- 41169eb: atualizando
+
 ## 1.0.7
 
 ### Patch Changes
