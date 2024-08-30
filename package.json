@@ -1,7 +1,7 @@
 {
   "name": "changeset",
   "version": "2.0.1",
-  "description": "poc changeset",
+  "description": "poc changeset - githubactions",
   "license": "UNLICENSED",
   "private": false,
   "dependencies": {
