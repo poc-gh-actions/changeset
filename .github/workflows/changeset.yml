@@ -29,11 +29,11 @@ jobs:
       
       - name: Install dependencies
         run: npm install
-        
+
       - name: Configure Git
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.name "[[ .Username ]]"
+          git config --global user.email "[[ .Email ]]"
 
       - name: Create and publish release
         env:
