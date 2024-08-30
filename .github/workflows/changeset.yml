@@ -53,9 +53,9 @@ jobs:
         run: |
           version=$(jq -r '.version' package.json)
           gh release create "$version" \
-              --repo="$GITHUB_REPOSITORY" \
-              --title="${GITHUB_REPOSITORY#*/} ${version#v}" \
-              --generate-notes          
+            --repo="$GITHUB_REPOSITORY" \
+            --title="${GITHUB_REPOSITORY#*/} ${version#v}" \
+            --generate-notes
 
       # - name: Install Dependencies
       #   run: yarn   
