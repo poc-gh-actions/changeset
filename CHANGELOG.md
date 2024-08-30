@@ -1,5 +1,11 @@
 # changeset
 
+## 2.0.0
+
+### Major Changes
+
+- bf0618d: agora estou criando o release no github. vamos ver
+
 ## 1.1.0
 
 ### Minor Changes
