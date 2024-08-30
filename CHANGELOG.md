@@ -1,5 +1,11 @@
 # changeset
 
+## 2.0.1
+
+### Patch Changes
+
+- 19facf2: nova versao do modulo de teste
+
 ## 2.0.0
 
 ### Major Changes
