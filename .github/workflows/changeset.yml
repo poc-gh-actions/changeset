@@ -25,15 +25,29 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          registry-url: 'https://npm.pkg.github.com'
+      #     registry-url: 'https://npm.pkg.github.com'
+      
+      - name: Install dependencies
+        run: npm install
 
-      - name: Install Dependencies
-        run: yarn   
-
-      - name: Create Release Pull Request
-        uses: changesets/action@v1
-        with:
-          publish: yarn release
+      - name: Create and publish release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx changeset version
+          git add .
+          git commit -m "Version Packages"
+          git push
+          npx changeset tag
+          git push --follow-tags
+
+      # - name: Install Dependencies
+      #   run: yarn   
+
+      # - name: Create Release Pull Request
+      #   uses: changesets/action@v1
+      #   with:
+      #     publish: yarn release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
