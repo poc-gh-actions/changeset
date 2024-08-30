@@ -1,5 +1,11 @@
 # changeset
 
+## 1.0.7
+
+### Patch Changes
+
+- d912194: nova versao do package.json
+
 ## 1.0.5
 
 ### Patch Changes
