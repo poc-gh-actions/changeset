@@ -46,6 +46,17 @@ jobs:
           npx changeset tag
           git push --follow-tags
 
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+        run: |
+          version=$(jq -r '.version' package.json)
+          gh release create "$version" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="${GITHUB_REPOSITORY#*/} ${version#v}" \
+              --generate-notes          
+
       # - name: Install Dependencies
       #   run: yarn   
 
