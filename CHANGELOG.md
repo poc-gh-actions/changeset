@@ -1,5 +1,11 @@
 # changeset
 
+## 2.0.2
+
+### Patch Changes
+
+- c210d0a: Update package.json description
+
 ## 2.0.1
 
 ### Patch Changes
