@@ -1,6 +1,6 @@
 {
   "name": "changeset",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "poc changeset - githubactions",
   "license": "UNLICENSED",
   "private": false,
@@ -8,4 +8,3 @@
     "@changesets/cli": "^2.27.7"
   }
 }
-
