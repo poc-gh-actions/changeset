@@ -35,27 +35,36 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: Create and publish release
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: yarn release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npx changeset version
-          git add .
-          git commit -m "Version Packages"
-          git push
-          npx changeset tag
-          git push --follow-tags
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
 
-      - name: Create release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.ref_name }}
-        run: |
-          version=$(jq -r '.version' package.json)
-          gh release create "$version" \
-            --repo="$GITHUB_REPOSITORY" \
-            --title="${GITHUB_REPOSITORY#*/} ${version#v}" \
-            --generate-notes
+      # - name: Create and publish release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     npx changeset version
+      #     git add .
+      #     git commit -m "Version Packages"
+      #     git push
+      #     npx changeset tag
+      #     git push --follow-tags
+
+      # - name: Create release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     tag: ${{ github.ref_name }}
+      #   run: |
+      #     version=$(jq -r '.version' package.json)
+      #     gh release create "$version" \
+      #       --repo="$GITHUB_REPOSITORY" \
+      #       --title="${GITHUB_REPOSITORY#*/} ${version#v}" \
+      #       --generate-notes
 
       # - name: Install Dependencies
       #   run: yarn   
